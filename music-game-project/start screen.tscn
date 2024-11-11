@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://tmbe6s7m5whi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_right = 44.0
+offset_bottom = 24.0
+text = "off"
