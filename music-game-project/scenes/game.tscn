@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2mbgr0vcsff2"]
+
+[ext_resource type="PackedScene" uid="uid://disp2k0atvr80" path="res://scenes/Move_ArrowLeft.tscn" id="1_xemyv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Move_ArrowLeft" parent="." instance=ExtResource("1_xemyv")]
+position = Vector2(402, 482)
