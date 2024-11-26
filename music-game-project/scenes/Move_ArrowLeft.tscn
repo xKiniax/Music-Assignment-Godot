@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://disp2k0atvr80"]
 
 [ext_resource type="Texture2D" uid="uid://cafmn5fkijjy7" path="res://Assets/arrow_left.png" id="1_5gtly"]
-[ext_resource type="Script" path="res://scripts/move_arrow_left.gd" id="1_81dgh"]
+[ext_resource type="Script" path="res://scripts/Move_ArrowLeft.gd" id="1_81dgh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vutc0"]
 size = Vector2(48, 36)
@@ -16,3 +16,6 @@ texture = ExtResource("1_5gtly")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vutc0")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_Move_ArrowLeft_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_Move_ArrowLeft_area_shape_exited"]

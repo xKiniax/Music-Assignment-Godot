@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://dulyi3kb2xwcm"]
+
+[ext_resource type="Texture2D" uid="uid://c8oim64p61dg" path="res://Assets/arrow_left_idle.png" id="1_6wp6e"]
+[ext_resource type="Texture2D" uid="uid://dyh6dxkmhqtu4" path="res://Assets/arrow_left_good.png" id="2_rvqtf"]
+[ext_resource type="Texture2D" uid="uid://gp1ohew1ntpg" path="res://Assets/arrow_left_bad.png" id="3_sp5vq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pda7l"]
+size = Vector2(25.646, 12.5152)
+
+[sub_resource type="Animation" id="Animation_ntuhp"]
+resource_name = "Good"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite_Good:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5b2hm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite_Good:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite_Bad:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5dsnx"]
+resource_name = "Bad"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite_Bad:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1u041"]
+_data = {
+"Bad": SubResource("Animation_5dsnx"),
+"Good": SubResource("Animation_ntuhp"),
+"RESET": SubResource("Animation_5b2hm")
+}
+
+[node name="Idle_ArrowLeft" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.25849e-07, 0)
+scale = Vector2(1.87163, 2.87651)
+shape = SubResource("RectangleShape2D_pda7l")
+
+[node name="Sprite_Idle" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_6wp6e")
+
+[node name="Sprite_Good" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_rvqtf")
+
+[node name="Sprite_Bad" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_sp5vq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1u041")
+}
