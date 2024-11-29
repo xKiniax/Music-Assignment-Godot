@@ -50,7 +50,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -62,7 +62,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1u041"]
@@ -86,13 +86,13 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_6wp6e")
 
 [node name="Sprite_Good" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_rvqtf")
 
 [node name="Sprite_Bad" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("3_sp5vq")

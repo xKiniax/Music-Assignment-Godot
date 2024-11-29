@@ -8,12 +8,12 @@ func _process(delta: float) -> void:
 	
 	# Sensor and pressed "Good"
 	if sensor == 1:
-		if Input.is_action_just_pressed("Left"):
+		if Input.is_action_just_pressed("ui_up"):
 			animp.play("Good")
 	
 	# Sensor and pressed "Bad"
 	if sensor == 0:
-		if Input.is_action_just_pressed("Left"):
+		if Input.is_action_just_pressed("ui_up"):
 			
 			animp.play("Bad")
 
