@@ -16,15 +16,11 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_up"):
 			
 			animp.play("Bad")
-
-
-
-func _on_Idle_ArrowLeft_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	
+func _on_Idle_ArrowUp_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	sensor = 1
 	Global.sensor_AL = 1
 
-
-func _on_Idle_ArrowLeft_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_Idle_ArrowUp_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	sensor = 0
 	Global.sensor_AL = 0
-	
