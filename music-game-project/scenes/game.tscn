@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2mbgr0vcsff2"]
+[gd_scene load_steps=7 format=3 uid="uid://c2mbgr0vcsff2"]
 
 [ext_resource type="PackedScene" uid="uid://disp2k0atvr80" path="res://scenes/Move_ArrowLeft.tscn" id="1_xemyv"]
 [ext_resource type="PackedScene" uid="uid://dulyi3kb2xwcm" path="res://scenes/Idle_ArrowLeft.tscn" id="2_1xirr"]
 [ext_resource type="PackedScene" uid="uid://dttliofjqs7do" path="res://scenes/Idle_ArrowUp.tscn" id="3_0ac6x"]
 [ext_resource type="PackedScene" uid="uid://b5j3wjhhqfm53" path="res://scenes/Move_ArrowUp.tscn" id="4_opp3x"]
+[ext_resource type="PackedScene" uid="uid://dpck5n4ongjva" path="res://scenes/Move_ArrowRight.tscn" id="5_lbs63"]
+[ext_resource type="PackedScene" uid="uid://cofindrqe6yys" path="res://scenes/Idle_ArrowRight.tscn" id="6_b5f2k"]
 
 [node name="Game" type="Node2D"]
 
@@ -18,3 +20,9 @@ position = Vector2(547, 179)
 
 [node name="Idle_ArrowUp" parent="." instance=ExtResource("3_0ac6x")]
 position = Vector2(548, 128)
+
+[node name="Move_ArrowRight" parent="." instance=ExtResource("5_lbs63")]
+position = Vector2(600, 496)
+
+[node name="Idle_ArrowRight" parent="." instance=ExtResource("6_b5f2k")]
+position = Vector2(600, 128)
