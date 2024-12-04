@@ -15,7 +15,7 @@ func _process(delta):
 	# Sesnor and pressed
 	if sensor == 1:
 		# Add "Global" > new
-		if Global.sensor_AL == 1:
+		if Global.sensor_AR == 1:
 			if Input.is_action_just_pressed("ui_right"):
 				queue_free()
 	

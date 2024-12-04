@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 30
+var speed = 100
 var sensor = 0
 
 func _process(delta):
@@ -15,7 +15,7 @@ func _process(delta):
 	# Sesnor and pressed
 	if sensor == 1:
 		# Add "Global" > new
-		if Global.sensor_AL == 1:
+		if Global.sensor_AU == 1:
 			if Input.is_action_just_pressed("ui_up"):
 				queue_free()
 

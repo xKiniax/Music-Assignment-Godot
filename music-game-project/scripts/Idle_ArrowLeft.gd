@@ -10,12 +10,14 @@ func _process(delta: float) -> void:
 	if sensor == 1:
 		if Input.is_action_just_pressed("Left"):
 			animp.play("Good")
+			Global.score += 10
 	
 	# Sensor and pressed "Bad"
 	if sensor == 0:
 		if Input.is_action_just_pressed("Left"):
 			
 			animp.play("Bad")
+			Global.score -= 10
 
 
 
