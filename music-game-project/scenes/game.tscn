@@ -12,6 +12,22 @@
 script = ExtResource("1_i3iie")
 metadata/_edit_vertical_guides_ = [576.0]
 
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.2973, 1.296)
+texture = ExtResource("2_gdkx3")
+
+[node name="Pause menu" parent="." instance=ExtResource("7_iabfw")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 576.0
+offset_top = 336.0
+offset_right = 576.0
+offset_bottom = 336.0
+
 [node name="Create" type="Node2D" parent="."]
 
 [node name="Marker2D_AL" type="Marker2D" parent="Create"]
@@ -22,11 +38,6 @@ position = Vector2(576, 683)
 
 [node name="Marker2D_AR" type="Marker2D" parent="Create"]
 position = Vector2(704, 683)
-
-[node name="Level" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(1.2973, 1.296)
-texture = ExtResource("2_gdkx3")
 
 [node name="Idle_ArrowLeft" parent="." instance=ExtResource("2_1xirr")]
 position = Vector2(448, 128)
@@ -55,16 +66,5 @@ stream = ExtResource("6_utmip")
 volume_db = -5.0
 autoplay = true
 bus = &"Music"
-
-[node name="Pause menu" parent="." instance=ExtResource("7_iabfw")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 576.0
-offset_top = 336.0
-offset_right = 576.0
-offset_bottom = 336.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -9,7 +9,7 @@ func _process(delta):
 	
 	# Move
 	position.y -= speed * delta
-	
+	speed += 5
 	# Screen exit
 	if position.y < -50:
 		queue_free()
