@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2mbgr0vcsff2"]
+[gd_scene load_steps=8 format=3 uid="uid://c2mbgr0vcsff2"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_i3iie"]
 [ext_resource type="PackedScene" uid="uid://dulyi3kb2xwcm" path="res://scenes/Idle_ArrowLeft.tscn" id="2_1xirr"]
+[ext_resource type="Texture2D" uid="uid://begwoe5qxnjvf" path="res://Assets/level.png" id="2_gdkx3"]
 [ext_resource type="PackedScene" uid="uid://dttliofjqs7do" path="res://scenes/Idle_ArrowUp.tscn" id="3_0ac6x"]
 [ext_resource type="PackedScene" uid="uid://cofindrqe6yys" path="res://scenes/Idle_ArrowRight.tscn" id="6_b5f2k"]
+[ext_resource type="AudioStream" uid="uid://jt1uonaoisg" path="res://Assets/Audio/Music/Rolemusic - The White Frame.mp3" id="6_utmip"]
+[ext_resource type="PackedScene" uid="uid://5w08iwp4bf73" path="res://scenes/pause_menu.tscn" id="7_iabfw"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_i3iie")
@@ -12,13 +15,18 @@ metadata/_edit_vertical_guides_ = [576.0]
 [node name="Create" type="Node2D" parent="."]
 
 [node name="Marker2D_AL" type="Marker2D" parent="Create"]
-position = Vector2(448, 512)
+position = Vector2(448, 683)
 
 [node name="Marker2D_AU" type="Marker2D" parent="Create"]
-position = Vector2(576, 512)
+position = Vector2(576, 683)
 
 [node name="Marker2D_AR" type="Marker2D" parent="Create"]
-position = Vector2(704, 512)
+position = Vector2(704, 683)
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.2973, 1.296)
+texture = ExtResource("2_gdkx3")
 
 [node name="Idle_ArrowLeft" parent="." instance=ExtResource("2_1xirr")]
 position = Vector2(448, 128)
@@ -41,5 +49,22 @@ theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_utmip")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="Pause menu" parent="." instance=ExtResource("7_iabfw")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 576.0
+offset_top = 336.0
+offset_right = 576.0
+offset_bottom = 336.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

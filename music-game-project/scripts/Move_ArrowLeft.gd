@@ -1,7 +1,9 @@
 extends Area2D
 
-var speed = 100
+var speed = 300
 var sensor = 0
+var RNG = RandomNumberGenerator.new()
+var random = 0
 
 func _process(delta):
 	
@@ -25,3 +27,4 @@ func _on_Move_ArrowLeft_area_shape_entered(area_rid: RID, area: Area2D, area_sha
 
 func _on_Move_ArrowLeft_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	sensor = 0
+	

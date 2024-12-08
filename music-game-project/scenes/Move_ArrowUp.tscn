@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5j3wjhhqfm53"]
 
-[ext_resource type="Script" path="res://Move_ArrowUp.gd" id="1_hfe8p"]
+[ext_resource type="Script" path="res://scripts/Move_ArrowUp.gd" id="1_hfe8p"]
 [ext_resource type="Texture2D" uid="uid://c2bp7fan6qogo" path="res://Assets/arrow_up.png" id="2_0wvp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c0jh"]
