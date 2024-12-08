@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2mbgr0vcsff2"]
+[gd_scene load_steps=7 format=3 uid="uid://c2mbgr0vcsff2"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_i3iie"]
 [ext_resource type="PackedScene" uid="uid://dulyi3kb2xwcm" path="res://scenes/Idle_ArrowLeft.tscn" id="2_1xirr"]
+[ext_resource type="Texture2D" uid="uid://bakj118a1hsk5" path="res://Assets/level.png" id="2_ptic1"]
 [ext_resource type="PackedScene" uid="uid://dttliofjqs7do" path="res://scenes/Idle_ArrowUp.tscn" id="3_0ac6x"]
+[ext_resource type="PackedScene" uid="uid://uj5qkpxo4aga" path="res://scenes/Conductor.tscn" id="6_1y2vo"]
 [ext_resource type="PackedScene" uid="uid://cofindrqe6yys" path="res://scenes/Idle_ArrowRight.tscn" id="6_b5f2k"]
 
 [node name="Game" type="Node2D"]
@@ -12,13 +14,18 @@ metadata/_edit_vertical_guides_ = [576.0]
 [node name="Create" type="Node2D" parent="."]
 
 [node name="Marker2D_AL" type="Marker2D" parent="Create"]
-position = Vector2(448, 512)
+position = Vector2(448, 674)
 
 [node name="Marker2D_AU" type="Marker2D" parent="Create"]
-position = Vector2(576, 512)
+position = Vector2(576, 674)
 
 [node name="Marker2D_AR" type="Marker2D" parent="Create"]
-position = Vector2(704, 512)
+position = Vector2(704, 674)
+
+[node name="Level" type="Sprite2D" parent="Create"]
+position = Vector2(576, 324)
+scale = Vector2(1.2973, 1.296)
+texture = ExtResource("2_ptic1")
 
 [node name="Idle_ArrowLeft" parent="." instance=ExtResource("2_1xirr")]
 position = Vector2(448, 128)
@@ -41,5 +48,7 @@ theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Conductor" parent="." instance=ExtResource("6_1y2vo")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
