@@ -17,7 +17,7 @@ func _process(delta):
 	if sensor == 1:
 		# Add "Global" > new
 		if Global.sensor_AU == 1:
-			if Input.is_action_just_pressed("ui_up"):
+			if Input.is_action_just_pressed("Up"):
 				queue_free()
 
 func _on_Move_ArrowUp_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
